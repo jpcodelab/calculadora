@@ -1,0 +1,86 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculadora de Cuenta</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+      background-color: #f9f9f9;
+      color: #333;
+    }
+    h2 {
+      text-align: center;
+      color: #0078D7;
+    }
+    input {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    button {
+      width: 100%;
+      padding: 10px;
+      background-color: #0078D7;
+      color: white;
+      font-size: 16px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #005a9e;
+    }
+    #resultado {
+      margin-top: 20px;
+      background: #fff;
+      padding: 15px;
+      border-radius: 5px;
+      box-shadow: 0 0 5px rgba(0,0,0,0.1);
+    }
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+    li {
+      padding: 5px 0;
+    }
+  </style>
+</head>
+<body>
+  <h2>Calculadora para dividir la cuenta</h2>
+  <p>Introduce el total de la cuenta (€):</p>
+  <input type="number" id="total" placeholder="Ejemplo: 130.50">
+  <button onclick="calcular()">Calcular</button>
+  <div id="resultado"></div>
+
+  <script>
+    function calcular() {
+      const total = parseFloat(document.getElementById('total').value);
+      if (isNaN(total) || total <= 0) {
+        document.getElementById('resultado').innerHTML = "<p style='color:red;'>Por favor, introduce un número válido.</p>";
+        return;
+      }
+      const unidades = 6.5;
+      const familias = [
+        { nombre: "Ana", unidades: 1 },
+        { nombre: "Carlos, Celia + Clara", unidades: 2.5 },
+        { nombre: "JP, Bea + André y Tomás", unidades: 3 }
+      ];
+      let html = "<h3>Resultado:</h3><ul>";
+      familias.forEach(f => {
+        const pago = (f.unidades / unidades) * total;
+        html += `<li><strong>${f.nombre}:</strong> €${pago.toFixed(2)}</li>`;
+      });
+      html += "</ul>";
+      document.getElementById('resultado').innerHTML = html;
+    }
+  </script>
+</body>
+</html>
