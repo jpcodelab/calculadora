@@ -25,7 +25,7 @@ pago_familia = (unidades_familia / 6.5) × total_cuenta
 1. Introduce el **total de la cuenta (€)** en el campo de texto.
 2. Pulsa el botón **Calcular** o presiona **Enter** en el teclado.
 3. Obtendrás el resultado en el formato:
-
+    **€XX.XX** → Nombre de la familia
 ---
 
 ## 📱 Características
