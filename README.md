@@ -45,8 +45,7 @@ Puedes publicar la calculadora en:
 ---
 
 ## 🖼 Captura de pantalla
-Ejemplo:
-<img width="738" height="1600" alt="image" src="https://github.com/user-attachments/assets/c05716f8-80bf-47ed-a259-f238da299e04" />
+<img width="275" alt="image" src="https://github.com/user-attachments/assets/c05716f8-80bf-47ed-a259-f238da299e04" />
 
 ---
 
