@@ -50,6 +50,10 @@
     }
     li {
       padding: 5px 0;
+      font-size: 18px;
+    }
+    strong {
+      color: #0078D7;
     }
   </style>
 </head>
@@ -61,6 +65,7 @@
   <div id="resultado"></div>
 
   <script>
+    // Función principal
     function calcular() {
       const total = parseFloat(document.getElementById('total').value);
       if (isNaN(total) || total <= 0) {
@@ -76,11 +81,18 @@
       let html = "<h3>Resultado:</h3><ul>";
       familias.forEach(f => {
         const pago = (f.unidades / unidades) * total;
-        html += `<li><strong>${f.nombre}:</strong> €${pago.toFixed(2)}</li>`;
+        html += `<li><strong>€${pago.toFixed(2)}</strong> → ${f.nombre}</li>`;
       });
       html += "</ul>";
       document.getElementById('resultado').innerHTML = html;
     }
+
+    // Permitir cálculo con Enter
+    document.getElementById('total').addEventListener('keypress', function(event) {
+      if (event.key === 'Enter') {
+        calcular();
+      }
+    });
   </script>
 </body>
 </html>
